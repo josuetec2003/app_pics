@@ -3,6 +3,7 @@
 const { app, BrowserWindow, Menu } = require('electron')
 const debug = require('electron-debug')
 const path  = require('path')
+var MENU = null;
 
 if (process.env.NODE_ENV === 'development') { 
 	debug({showDevTools: true}) 
@@ -14,44 +15,52 @@ if (process.env.NODE_ENV === 'development') {
 
 const isMac = process.platform === 'darwin'
 
-const MENU = [
-	(isMac ? {
-
-		label: app.menu,
-		submenu: [
-			{ role: 'about' },
-			{ type: 'separator' },
-			{ role: 'services' },
-			{ type: 'separator' },
-			{ role: 'hide' },
-			{ role: 'hideothers' },
-			{ role: 'unhide' },
-			{ type: 'separator' },
-			{ role: 'quit' }
-		]
-
-	}: {}),
-
-	{
-		label: 'File',
-		submenu: [
-			isMac ? {role: 'close'} : {role: 'quit'}
-		]
-	},
-	{
-		label: 'Edit',
-		submenu: [
-			{
-				label: 'Cut',
-				accelerator: 'Ctrl+C'
-			},
-			{
-				label: 'Copy',
-				accelerator: 'Ctrl+V'
-			}
-		]
-	}
-]
+if (isMac)
+{
+	MENU = [
+		{
+			label: app.menu,
+			submenu: [
+				{ role: 'about' },
+				{ type: 'separator' },
+				{ role: 'services' },
+				{ type: 'separator' },
+				{ role: 'hide' },
+				{ role: 'hideothers' },
+				{ role: 'unhide' },
+				{ type: 'separator' },
+				{ role: 'quit' }
+			]
+		},
+		{
+			label: 'File',
+			submenu: [
+				{
+					label: 'New'
+				},
+				{
+					label: 'Open'
+				}
+			]
+		}
+	]
+}
+else // windows o linux
+{
+	MENU = [
+		{
+			label: 'File',
+			submenu: [
+				{
+					label: 'New'
+				},
+				{
+					label: 'Open'
+				}
+			]
+		}
+	]
+}
 
 app.on('ready', () => {
 	var win = new BrowserWindow({
