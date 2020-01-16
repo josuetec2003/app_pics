@@ -5,7 +5,7 @@ const debug = require('electron-debug')
 const path  = require('path')
 
 if (process.env.NODE_ENV === 'development') { 
-	//debug({showDevTools: true}) 
+	debug({showDevTools: true}) 
 	require('electron-reload')(__dirname, { 
 		electron: path.join(__dirname, '../node_modules', '.bin', 'electron')
 	})
