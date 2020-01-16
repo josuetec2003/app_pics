@@ -1,0 +1,9 @@
+#image-view {
+	width: 100%;
+	padding: 20px;
+	overflow: hidden;
+}
+
+#image-displayed {
+	width: 100%;
+}

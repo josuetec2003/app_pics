@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Electron App v1</title>
+	<link rel="stylesheet" href="../assets/css/photon.css">
+	<link rel="stylesheet" href="../assets/css/app.css">
+</head>
+<body>
+
+	<div class="window">
+		<div class="window-content">
+			<div class="pane-group">
+				<div class="pane-sm sidebar">
+					<ul class="list-group">
+						<li class="list-group-header">
+							<input class="form-control" type="text" placeholder="Search for someone">
+						</li>
+
+						<li class="list-group-item selected">
+							<img 
+								class="img-circle media-object pull-left" 
+								src="../assets/img/image1.jpg" 
+								width="32" 
+								height="32">
+
+							<div class="media-body">
+								<strong>Titulo 1</strong>
+								<p>Lorem ipsum dolor sit amet.</p>
+							</div>
+						</li>
+
+						<li class="list-group-item">
+							<img 
+								class="img-circle media-object pull-left" 
+								src="../assets/img/image2.jpg" 
+								width="32" 
+								height="32">
+
+							<div class="media-body">
+								<strong>Titulo 2</strong>
+								<p>Lorem ipsum dolor sit amet.</p>
+							</div>
+						</li>
+
+						<li class="list-group-item">
+							<img 
+								class="img-circle media-object pull-left" 
+								src="../assets/img/image3.jpg" 
+								width="32" 
+								height="32">
+
+							<div class="media-body">
+								<strong>Titulo 3</strong>
+								<p>Lorem ipsum dolor sit amet.</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="pane">
+					<header class="toolbar toolbar-header">
+						<div class="toolbar-actions">
+							<div class="btn-group">
+								<button class="btn btn-default">
+									<span class="icon icon-home"></span>
+								</button>
+								<button class="btn btn-default">
+									<span class="icon icon-folder"></span>
+								</button>
+							</div>
+						</div>
+					</header>
+					<div id="image-view">
+						<img src="../assets/img/image1.jpg" id="image-displayed">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="toolbar toolbar-footer">
+			<h1 class="title">Footer</h1>
+		</footer>
+	</div>
+		
+	<script src="../assets/js/app.js"></script>
+</body>
+</html>
